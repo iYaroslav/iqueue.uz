@@ -1,0 +1,484 @@
+@import "../../styles/mixins.scss";
+
+.section {
+    @include res("padding-top", 184px);
+    @include media(768) {
+        @include resl("padding-top", 184px);
+    }
+    @include media(576) {
+        @include resa("padding-top", 135px);
+    }
+    .heading {
+        text-align: center;
+        position: relative;
+
+        h1 {
+            margin: 0;
+            font-weight: 800;
+            color: #152040;
+            @include res("font-size", 64px);
+            @include res("line-height", 62.72px);
+            @include media(768) {
+                @include resl("font-size", 48px);
+                @include resl("line-height", 50.72px);
+            }
+            @include media(576) {
+                @include resa("font-size", 32px);
+                @include resa("line-height", 31.36px);
+                text-align: center;
+            }
+        }
+
+        p {
+            font-weight: 700;
+            color: #8e9fb9;
+            @include res("font-size", 16px);
+            @include res("line-height", 24px);
+            @include res("margin-top", 8px);
+            @include res("letter-spacing", -0.4px);
+            @include media(768) {
+                @include resl("font-size", 16px);
+                @include resl("line-height", 24px);
+                @include resl("margin-top", 8px);
+                @include resl("letter-spacing", -0.4px);
+                br {
+                    display: none;
+                }
+            }
+            @include media(576) {
+                @include resa("font-size", 16px);
+                @include resa("line-height", 21.12px);
+                @include resa("margin-top", 16px);
+                @include resa("letter-spacing", -0.4px);
+                br {
+                    display: none;
+                }
+            }
+        }
+
+        .dopText {
+            background: #14a800;
+            box-shadow: 0px 0px 0.04em 0px #0000000a;
+            color: #fff;
+            position: absolute;
+            @include res("font-size", 17px);
+            @include res("padding", 10px);
+            @include res("padding-left", 12px);
+            @include res("padding-right", 12px);
+            @include res("right", 340px);
+            @include res("top", -55px);
+            @include res("border-radius", 8px);
+            @include media(768) {
+                @include resl("font-size", 17px);
+                @include resl("padding", 10px);
+                @include resl("padding-left", 12px);
+                @include resl("padding-right", 12px);
+                @include resl("right", 70px);
+                @include resl("top", -55px);
+                @include resl("border-radius", 8px);
+            }
+            @include media(576) {
+                @include resa("font-size", 13px);
+                @include resa("line-height", 18px);
+                @include resa("padding", 12px);
+                @include resa("padding-top", 8.5px);
+                @include resa("padding-bottom", 9.5px);
+                @include resa("right", 29px);
+                @include resa("top", -46px);
+                @include resa("border-radius", 8px);
+            }
+            &::after {
+                content: "";
+                border: solid transparent;
+                border-top: solid #14a800;
+                position: absolute;
+                width: 0;
+                @include res("left", 10px);
+                @include res("bottom", -17px);
+                @include res("border-width", 8px);
+                @include res("border-top-width", 10px);
+                @include media(768) {
+                    @include resl("left", 10px);
+                    @include resl("bottom", -17px);
+                    @include resl("border-width", 8px);
+                    @include resl("border-top-width", 10px);
+                }
+                @include media(576) {
+                    @include resa("left", 10px);
+                    @include resa("bottom", -17px);
+                    @include resa("border-width", 8px);
+                    @include resa("border-top-width", 10px);
+                }
+            }
+        }
+    }
+    .flexitem {
+        display: flex;
+        justify-content: space-between;
+        @include res("margin-top", 38px);
+        @include media(768) {
+            flex-wrap: wrap;
+            @include resl("margin-top", 38px);
+            @include resl("gap", 12px);
+            justify-content: center;
+        }
+        @include media(576) {
+            gap: 0;
+            display: none;
+        }
+        &Mob {
+            display: none;
+            flex-direction: column;
+            @include resa("margin-top", 38px);
+
+            @include media(576) {
+                display: flex;
+            }
+        }
+        .item {
+            border: solid #8e9fb9;
+            display: flex;
+            align-items: center;
+            @include res("border-width", 1px);
+            @include res("width", 382px);
+            @include res("height", 128px);
+            @include res("padding-left", 16px);
+            @include res("padding-right", 16px);
+            @include res("border-radius", 24px);
+            background-color: #ffffff;
+            transition: 0.3s all;
+            @include media(768) {
+                @include resl("border-width", 1px);
+                @include resl("width", 308px);
+                @include resl("height", 128px);
+                @include resl("padding-left", 16px);
+                @include resl("padding-right", 16px);
+                @include resl("border-radius", 28px);
+            }
+            @include media(576) {
+                flex-direction: column;
+                height: auto;
+                padding: 0;
+                border-color: #c2d2eb;
+                @include resa("width", 360px);
+                @include resa("border-width", 1px);
+                @include resa("padding-bottom", 32px);
+                @include resa("border-top-left-radius", 32px);
+                @include resa("border-top-right-radius", 32px);
+                box-shadow: 0px -5px 24px 0px #00000014;
+                background-color: #f4f4f4;
+                &:not(:first-child) {
+                    @include resa("margin-top", -110px);
+                }
+            }
+
+            &.active {
+                background-color: #ffffff;
+                @include resa("margin-bottom", 70px);
+                .item {
+                    &Header {
+                        h3 {
+                            color: #152040;
+                        }
+                        &Icon {
+                            svg {
+                                display: block;
+                                &.plus {
+                                    display: none !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .imagesitem {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #14a800;
+                @include res("min-width", 64px);
+                @include res("width", 64px);
+                @include res("height", 64px);
+                @include res("border-radius", 100px);
+                @include media(768) {
+                    @include resl("min-width", 64px);
+                    @include resl("width", 64px);
+                    @include resl("height", 64px);
+                    @include resl("border-radius", 100px);
+                }
+            }
+
+            .iconone svg {
+                @include res("width", 26.29px);
+                @include res("height", 26.28px);
+                @include media(768) {
+                    @include resl("width", 26.29px);
+                    @include resl("height", 26.28px);
+                }
+            }
+
+            .icontwo svg {
+                @include res("width", 32px);
+                @include res("height", 32px);
+                @include media(768) {
+                    @include resl("width", 32px);
+                    @include resl("height", 32px);
+                }
+            }
+
+            .iconthree img {
+                @include res("width", 140px);
+                @include res("height", 64px);
+                @include media(768) {
+                    @include resl("width", 140px);
+                    @include resl("height", 64px);
+                }
+            }
+
+            .blockitem {
+                @include res("margin-left", 16px);
+                @include media(768) {
+                    @include resl("margin-left", 16px);
+                }
+                h6 {
+                    font-family: "Mont";
+                    font-weight: 800;
+                    color: #152040;
+                    margin: 0;
+                    @include res("line-height", 24.36px);
+                    @include res("font-size", 21px);
+                    @include media(768) {
+                        @include resl("line-height", 24.36px);
+                        @include resl("font-size", 21px);
+                    }
+                    @include media(576) {
+                        @include resa("line-height", 24.36px);
+                        @include resa("font-size", 21px);
+                    }
+                }
+
+                p {
+                    font-family: "Mont";
+                    font-weight: 600;
+                    @include res("letter-spacing", -0.4px);
+                    @include res("line-height", 20.4px);
+                    @include res("font-size", 17px);
+                    @include res("margin-top", 5px);
+                    @include media(768) {
+                        @include resl("letter-spacing", -0.4px);
+                        @include resl("line-height", 16.4px);
+                        @include resl("font-size", 14px);
+                        @include resl("margin-top", 5px);
+                    }
+                    @include media(576) {
+                        @include resa("height", 71.7px);
+                        @include resa("letter-spacing", -0.4px);
+                        @include resa("line-height", 25.35px);
+                        @include resa("font-size", 17px);
+                        @include resa("padding-bottom", 21px);
+                        margin-top: 0;
+                        text-align: left;
+                        &.other {
+                            height: auto;
+                        }
+                    }
+                }
+            }
+            &Second {
+                @include resa("border-radius", 32px);
+            }
+            &Last {
+                @include resa("border-radius", 32px);
+                transition: 0.3s all;
+                .itemContent {
+                    height: 0;
+                    overflow: hidden;
+                    transition: 0.3s all;
+                }
+                &.active {
+                    margin-bottom: 0 !important;
+                    .itemContent {
+                        @include resa("height", 56px);
+                    }
+                }
+                .blockitem {
+                    p {
+                        @include media(576) {
+                            padding-bottom: 0 !important;
+                            @include resa("letter-spacing", -0.4px);
+                            @include resa("line-height", 18px);
+                            @include resa("font-size", 15px);
+                            margin-top: 0;
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+            &Header {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                @include resa("padding", 24px);
+                h3 {
+                    font-weight: 800;
+                    text-align: left;
+                    @include resa("font-size", 21px);
+                    @include resa("line-height", 24.36px);
+                    @include resa("letter-spacing", -0.4px);
+                    color: #8e9fb9;
+                }
+                &Icon {
+                    svg {
+                        @include resa("width", 28px);
+                        @include resa("height", 28px);
+                        display: none;
+                        &.plus {
+                            display: block !important;
+                        }
+                    }
+                }
+            }
+            &Content {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                @include resa("padding-left", 24px);
+                @include resa("padding-right", 24px);
+                .imagesitem {
+                    @include resa("width", 56px);
+                    @include resa("height", 56px);
+                    svg {
+                        @include resa("width", 32px);
+                        @include resa("height", 32px);
+                    }
+                }
+                .imagesitemlast {
+                    @include resa("width", 126px);
+                    @include resa("height", 56px);
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        @include res("gap", 16px);
+        @include res("margin-top", 45px);
+        @include media(768) {
+            @include resl("gap", 16px);
+            @include resl("margin-top", 28px);
+        }
+        @include media(576) {
+            @include resa("margin-top", 48px);
+            @include resa("gap", 16px);
+        }
+        &Icon {
+            @include res("width", 51px);
+            @include res("height", 77.5px);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            @include media(768) {
+                @include resl("width", 51px);
+                @include resl("height", 77.5px);
+            }
+            @include media(576) {
+                @include resa("width", 51px);
+                @include resa("height", 77.5px);
+            }
+            &Square {
+                @include res("width", 50px);
+                @include res("height", 50px);
+                @include media(768) {
+                    @include resl("width", 50px);
+                    @include resl("height", 50px);
+                }
+                @include media(576) {
+                    @include resa("width", 50px);
+                    @include resa("height", 50px);
+                }
+            }
+            &Arrow {
+                @include res("width", 8px);
+                @include res("height", 55px);
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                @include res("top", -10px);
+                animation: moveUpDown 3s infinite;
+                @include media(768) {
+                    animation: moveUpDownTab 3s infinite;
+                    @include resl("top", -10px);
+                    @include resl("width", 8px);
+                    @include resl("height", 55px);
+                }
+                @include media(576) {
+                    animation: moveUpDownMob 3s infinite;
+                    @include resa("top", -10px);
+                    @include resa("width", 8px);
+                    @include resa("height", 55px);
+                }
+            }
+        }
+        h3 {
+            font-weight: 400;
+            text-align: center;
+            text-transform: uppercase;
+            @include res("font-size", 16px);
+            @include res("line-height", 20.45px);
+            @include media(768) {
+                @include resl("font-size", 14px);
+                @include resl("line-height", 16.45px);
+            }
+            @include media(576) {
+                @include resa("font-size", 16px);
+                @include resa("line-height", 20.45px);
+            }
+        }
+    }
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0) translateX(-50%);
+    }
+    50% {
+        transform: translateY(1.1vw) translateX(-50%);
+    }
+    100% {
+        transform: translateY(0) translateX(-50%);
+    }
+}
+
+@keyframes moveUpDownTab {
+    0% {
+        transform: translateY(0) translateX(-50%);
+    }
+    50% {
+        transform: translateY(2.3vw) translateX(-50%);
+    }
+    100% {
+        transform: translateY(0) translateX(-50%);
+    }
+}
+
+@keyframes moveUpDownMob {
+    0% {
+        transform: translateY(0) translateX(-50%);
+    }
+    50% {
+        transform: translateY(4.7vw) translateX(-50%);
+    }
+    100% {
+        transform: translateY(0) translateX(-50%);
+    }
+}

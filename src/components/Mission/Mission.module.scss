@@ -1,0 +1,174 @@
+@import "../../styles/mixins.scss";
+
+.mission {
+  @include res("margin-bottom", 176px);
+  @include res("margin-top", 120px);
+  @include res("height", 620px);
+  @include media(768) {
+    @include resl("height", 450px);
+    @include resl("border-radius", 32px);
+  }
+  @include media(576) {
+    height: auto;
+    @include resa("margin-top", 64px);
+    @include resa("margin-bottom", 119px);
+  }
+  &Container {
+    height: 100%;
+  }
+  &Img {
+    @include res("width", 590px);
+    height: 100%;
+    @include media(768) {
+      @include resl("width", 320px);
+    }
+    @include media(576) {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+  }
+  &Content {
+    display: flex;
+    height: 100%;
+    @include res("border-radius", 32px);
+    border-color: #b2bac1;
+    border-style: solid;
+    @include res("border-width", 1px);
+    overflow: hidden;
+
+    @include media(576) {
+      flex-direction: column;
+      @include resa("gap", 12px);
+      @include resa("padding", 4px);
+      @include resa("padding-top", 4.5px);
+      @include resa("border-radius", 32px);
+      @include resa("border-width", 1px);
+    }
+  }
+}
+
+.content {
+  background-color: #f4f4f4;
+  @include res("padding-top", 182px);
+  @include res("padding-bottom", 182px);
+  @include res("padding-left", 74px);
+  @include res("padding-right", 44px);
+  @include res("width", 590px);
+  @include media(768) {
+    display: flex;
+    @include resl("width", 320px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    @include resl("border-width", 1px);
+    @include resl("padding", 28px);
+  }
+  @include media(576) {
+    background: transparent;
+    @include media(576) {
+      width: 100%;
+      @include resa("padding", 12px);
+      @include resa("padding-bottom", 20.5px);
+    }
+  }
+  &Btn {
+    background: #14a800;
+    @include res("border-radius", 48px);
+    @include res("padding", 12px);
+    @include res("padding-right", 16px);
+    display: flex;
+    align-items: center;
+    @include res("gap", 10px);
+    @include media(576) {
+      @include resa("border-radius", 48px);
+      @include resa("padding", 12px);
+      @include resa("padding-right", 16px);
+      @include resa("gap", 10px);
+    }
+    svg {
+      @include res("width", 22px);
+      @include res("height", 24px);
+      @include media(576) {
+        @include resa("width", 22px);
+        @include resa("height", 24px);
+      }
+    }
+    h3 {
+      font-family: "Rubik";
+      @include res("font-size", 15px);
+      @include res("line-height", 19.8px);
+      @include res("letter-spacing", -0.4px);
+      font-weight: 400;
+      color: #ffffff;
+      text-align: left;
+      @include media(768) {
+        @include resl("font-size", 12px);
+        @include resl("letter-spacing", -0.4px);
+      }
+      @include media(576) {
+        @include resa("font-size", 15px);
+        @include resa("line-height", 19.8px);
+        @include resa("letter-spacing", -0.4px);
+      }
+    }
+    @include media(768) {
+      @include resl("padding", 9px);
+      @include resl("padding-left", 14px);
+      @include resl("padding-right", 14px);
+      @include resl("gap", 10px);
+      @include resl("border-radius", 46px);
+      @include resl("margin-bottom", 16px);
+      svg {
+        @include resl("width", 24px);
+        @include resl("height", 24px);
+      }
+    }
+  }
+  &Title {
+    @include res("margin-top", 12px);
+    @include res("font-size", 32px);
+    @include res("line-height", 42.24px);
+    font-weight: 700;
+    @include res("letter-spacing", -0.4px);
+    text-align: left;
+    color: #152040;
+    @include media(768) {
+      @include resl("letter-spacing", -0.4px);
+      @include resl("font-size", 22px);
+      @include resl("line-height", 26.24px);
+      @include resl("margin-bottom", 10px);
+    }
+    @include media(576) {
+      @include resa("margin-top", 16px);
+      @include resa("font-size", 24px);
+      @include resa("line-height", 28.8px);
+      @include resa("letter-spacing", -0.4px);
+    }
+  }
+  &Text {
+    @include res("margin-top", 12px);
+    font-family: "Rubik";
+    @include res("font-size", 17px);
+    @include res("line-height", 24.48px);
+    font-weight: 400;
+    @include res("letter-spacing", -0.4px);
+    text-align: left;
+    color: #8e9fb9;
+    @include media(768) {
+      @include resl("letter-spacing", -0.4px);
+      @include resl("font-size", 14px);
+      @include resl("line-height", 17.48px);
+    }
+    @include media(576) {
+      @include resa("margin-top", 12px);
+      @include resa("font-size", 16px);
+      @include resa("line-height", 21.12px);
+      @include resa("letter-spacing", -0.4px);
+    }
+  }
+}

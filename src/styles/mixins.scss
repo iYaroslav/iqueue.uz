@@ -1,0 +1,20 @@
+@mixin media($size) {
+    @media (max-width:#{$size}px) {
+        @content;
+    }
+}
+
+
+$baseValueUltraLarge: 768px;
+$baseValueLarge: 1440px;
+$baseValueSmall: 392px;
+
+@mixin resl($property, $value, $important: false) {
+    #{$property}: calc(($value / $baseValueUltraLarge) * 100vw) #{if($important, "!important", "")};
+}
+@mixin res($property, $value, $important: false) {
+    #{$property}: calc(($value / $baseValueLarge) * 100vw) #{if($important, "!important", "")};
+}
+@mixin resa($property, $value, $important: false) {
+    #{$property}: calc(($value / $baseValueSmall) * 100vw) #{if($important, "!important", "")};
+}

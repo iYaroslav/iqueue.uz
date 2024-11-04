@@ -1,0 +1,229 @@
+@import "../../styles/mixins.scss";
+
+.plus {
+  @include res("margin-top", 120px);
+  @include media(768) {
+    @include resl("margin-top", 100px);
+  }
+  @include media(576) {
+    @include resa("margin-top", 64px);
+  }
+  &Title {
+    font-weight: 700;
+    text-align: center;
+    color: #1e4870;
+    @include res("margin-bottom", 16px);
+    @include res("font-size", 64px);
+    @include res("line-height", 62.72px);
+    @include media(768) {
+      @include resl("margin-bottom", 16px);
+      @include resl("font-size", 42px);
+      @include resl("line-height", 41.16px);
+    }
+    @include media(576) {
+      @include resa("margin-bottom", 16px);
+      @include resa("font-size", 42px);
+      @include resa("line-height", 41.16px);
+    }
+  }
+
+  &Text {
+    font-weight: 600;
+    text-align: center;
+    color: #8e9fb9;
+    margin: auto;
+    @include res("margin-bottom", 48px);
+    @include res("max-width", 800px);
+    @include res("font-size", 21px);
+    @include res("line-height", 30.24px);
+    @include media(768) {
+      @include resl("margin-bottom", 32px);
+      @include resl("font-size", 13px);
+      @include resl("line-height", 19.24px);
+    }
+    @include media(576) {
+      max-width: 100%;
+      @include resa("font-size", 15px);
+      @include resa("line-height", 19.8px);
+      @include resa("margin-bottom", 32px);
+    }
+  }
+  &Swiper {
+    display: none;
+    @include media(576) {
+      display: block;
+    }
+  }
+  &List {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include res("gap", 16px);
+    @include media(768) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media(576) {
+      display: none;
+    }
+    &Item {
+      @include res("height", 500px);
+      @include res("border-radius", 24px);
+      @include res("padding", 24px);
+      @include res("padding-top", 32px);
+      @include res("padding-bottom", 34px);
+      overflow: hidden;
+      position: relative;
+      @include media(768) {
+        @include resl("height", 400px);
+        @include resl("border-radius", 24px);
+        @include resl("padding", 16px);
+        @include resl("padding-top", 24px);
+        @include resl("padding-bottom", 24px);
+      }
+      @include media(576) {
+        @include resa("height", 480px);
+        @include resa("border-radius", 24px);
+        @include resa("padding", 16px);
+        @include resa("padding-top", 24px);
+        @include resa("padding-bottom", 24px);
+      }
+      &Img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        img {
+          transition: 0.3s all;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+  &Item {
+    &Content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+    &Top {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap-reverse;
+      @include res("gap", 12px);
+      @include media(768) {
+        @include resl("gap", 10px);
+      }
+      @include media(576) {
+        @include resa("gap", 8px);
+      }
+    }
+    &Info {
+      font-family: Onest;
+      font-weight: 500;
+      text-align: left;
+      border-color: #ffffffcc;
+      background-color: #14a800;
+      color: #ffffff;
+      border-style: solid;
+      @include res("border-width", 1px);
+      @include res("font-size", 15px);
+      @include res("line-height", 20px);
+      @include res("padding", 8px);
+      @include res("padding-left", 16px);
+      @include res("padding-right", 16px);
+      @include res("border-radius", 40px);
+      box-shadow: 0px 4px 12px 0px #0000001f;
+      @include media(768) {
+        @include resl("border-width", 1px);
+        @include resl("font-size", 13px);
+        @include resl("line-height", 17px);
+        @include resl("padding", 6px);
+        @include resl("padding-left", 12px);
+        @include resl("padding-right", 12px);
+        @include resl("border-radius", 40px);
+      }
+      @include media(576) {
+        @include resa("border-width", 1px);
+        @include resa("font-size", 12px);
+        @include resa("line-height", 20px);
+        @include resa("padding", 6px);
+        @include resa("padding-left", 12px);
+        @include resa("padding-right", 12px);
+        @include resa("border-radius", 40px);
+      }
+      &.active {
+        background-color: #ffffff;
+        color: #0d1722;
+      }
+    }
+    &Num {
+      color: #ffffff;
+      font-weight: 700;
+      text-align: left;
+      @include res("font-size", 56px);
+      @include res("line-height", 54.88px);
+      @include media(768) {
+        @include resl("font-size", 48px);
+        @include resl("line-height", 50.88px);
+      }
+      @include media(576) {
+        @include resa("font-size", 56px);
+        @include resa("line-height", 54.88px);
+      }
+    }
+    &Title {
+      color: #ffffff;
+      font-weight: 700;
+      text-align: left;
+      @include res("margin-top", 8px);
+      @include res("font-size", 25px);
+      @include res("line-height", 24.5px);
+      @include res("letter-spacing", -0.4px);
+      @include media(768) {
+        @include resl("margin-top", 4px);
+        @include resl("font-size", 21px);
+        @include resl("line-height", 23.5px);
+        @include resl("letter-spacing", -0.4px);
+      }
+      @include media(576) {
+        @include resa("margin-top", 4px);
+        @include resa("font-size", 25px);
+        @include resa("line-height", 24.5px);
+        @include resa("letter-spacing", -0.4px);
+      }
+    }
+    &Text {
+      color: #ffffff;
+      font-weight: 700;
+      text-align: left;
+      @include res("margin-top", 16px);
+      @include res("font-size", 16px);
+      @include res("line-height", 21.12px);
+      @include res("letter-spacing", -0.4px);
+      @include media(768) {
+        @include resl("margin-top", 8px);
+        @include resl("font-size", 14px);
+        @include resl("line-height", 17.5px);
+        @include resl("letter-spacing", -0.4px);
+      }
+      @include media(576) {
+        @include resa("margin-top", 16px);
+        @include resa("font-size", 16px);
+        @include resa("line-height", 21.12px);
+        @include resa("letter-spacing", -0.4px);
+      }
+    }
+  }
+}

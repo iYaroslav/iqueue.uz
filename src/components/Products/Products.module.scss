@@ -1,0 +1,245 @@
+@import "../../styles/mixins.scss";
+
+.products {
+  @include res("margin-top", 120px);
+  @include media(576) {
+    @include resa("margin-top", 64px);
+  }
+  &Title {
+    font-weight: 700;
+    text-align: center;
+    color: #1e4870;
+    @include res("margin-bottom", 16px);
+    @include res("font-size", 64px);
+    @include res("line-height", 62.72px);
+    @include media(768) {
+      @include resl("margin-bottom", 16px);
+      @include resl("font-size", 42px);
+      @include resl("line-height", 41.16px);
+    }
+    @include media(576) {
+      @include resa("margin-bottom", 16px);
+      @include resa("font-size", 42px);
+      @include resa("line-height", 41.16px);
+    }
+  }
+
+  &Text {
+    font-weight: 600;
+    text-align: center;
+    color: #8e9fb9;
+    margin: auto;
+    @include res("margin-bottom", 48px);
+    @include res("max-width", 800px);
+    @include res("font-size", 21px);
+    @include res("line-height", 30.24px);
+    @include media(768) {
+      @include resl("margin-bottom", 32px);
+      @include resl("font-size", 13px);
+      @include resl("line-height", 19.24px);
+    }
+    @include media(576) {
+      max-width: 100%;
+      @include resa("font-size", 15px);
+      @include resa("line-height", 19.8px);
+      @include resa("margin-bottom", 32px);
+    }
+  }
+  &List {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include res("column-gap", 16px);
+    @include res("row-gap", 32px);
+    @include media(768) {
+      grid-template-columns: repeat(2, 1fr);
+      @include resl("column-gap", 16px);
+      @include resl("row-gap", 32px);
+    }
+    @include media(576) {
+      @include resa("column-gap", 8px);
+      @include resa("row-gap", 20px);
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &Content {
+    @include res("margin-top", 24px);
+    @include media(768) {
+      @include resl("margin-top", 24px);
+    }
+    @include media(576) {
+      margin-top: 0;
+    }
+  }
+  &Item {
+    width: 100%;
+    &Img {
+      background-color: #f4f4f4;
+      overflow: hidden;
+      width: 100%;
+      @include res("height", 400px);
+      @include res("border-radius", 24px);
+      @include media(768) {
+        @include resl("height", 300px);
+      }
+      @include media(576) {
+        @include resa("height", 184px);
+        @include resa("border-radius", 11px);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    &Title {
+      font-weight: 700;
+      color: #152040;
+      text-align: left;
+      @include res("font-size", 25px);
+      @include res("line-height", 28px);
+      @include res("height", 56px);
+      @include res("letter-spacing", -0.4px);
+      @include res("margin-top", 23px);
+      @include media(768) {
+        @include resl("font-size", 22px);
+        @include resl("line-height", 28px);
+        @include resl("height", 56px);
+        @include resl("letter-spacing", -0.4px);
+        @include resl("margin-top", 23px);
+      }
+      @include media(576) {
+        @include resa("margin-top", 10px);
+        @include resa("font-size", 13px);
+        @include resa("line-height", 14.7px);
+        @include resa("height", 29.4px);
+        @include resa("letter-spacing", -0.4px);
+      }
+    }
+    &Text {
+      font-weight: 700;
+      text-align: left;
+      color: #152040;
+      @include res("font-size", 16px);
+      @include res("line-height", 21.12px);
+      @include res("letter-spacing", -0.4px);
+      @include res("margin-top", 16px);
+      @include media(768) {
+        @include resl("font-size", 12px);
+        @include resl("line-height", 16.12px);
+        @include resl("letter-spacing", -0.4px);
+        @include resl("margin-top", 8px);
+        @include resl("max-width", 300px);
+      }
+      @include media(576) {
+        @include resa("font-size", 10px);
+        font-weight: 500;
+        @include resa("line-height", 12.12px);
+        @include resa("letter-spacing", -0.4px);
+        @include resa("margin-top", 4px);
+        @include resa("max-width", 300px);
+      }
+      // @include media(576) {
+      //   display: none;
+      // }
+    }
+    &List {
+      display: none;
+      @include resa("margin-top", 7px);
+      flex-direction: column;
+      @include resa("padding-left", 20px);
+      // @include media(576) {
+      //   display: flex;
+      // }
+      li {
+        list-style-type: disc;
+        font-weight: 600;
+        color: #152040;
+        text-align: left;
+        @include resa("line-height", 18.48px);
+        @include resa("letter-spacing", -0.4px);
+        @include resa("font-size", 14px);
+      }
+    }
+  }
+}
+
+.category {
+  &List {
+    display: flex;
+    margin: auto;
+    @include res("width", 1180px);
+    @include res("gap", 12px);
+    @include media(768) {
+      @include resl("width", 640px);
+      @include resl("gap", 12px);
+    }
+    @include media(576) {
+      @include resa("gap", 8px);
+      @include resa("width", 392px);
+      @include resa("padding-left", 16px);
+      @include resa("padding-right", 16px);
+      @include resa("padding-top", 3px);
+      @include resa("padding-bottom", 3px);
+      @include resa("margin-bottom", 12px);
+    }
+    &Item {
+      font-family: "Onest";
+      font-weight: 400;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      color: #000000;
+      justify-content: center;
+      border-color: #8e9fb9;
+      border-style: solid;
+      cursor: pointer;
+      @include res("border-width", 1px);
+      @include res("gap", 10px);
+      @include res("height", 46px);
+      @include res("padding-left", 16px);
+      @include res("padding-right", 16px);
+      @include res("font-size", 17px);
+      @include res("line-height", 21.68px);
+      @include res("border-radius", 46px);
+      text-transform: uppercase;
+
+      &.active {
+        background-color: #14a800;
+        border-color: #14a800;
+        color: #ffffff;
+      }
+      h3 {
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        color: inherit;
+      }
+      @include media(768) {
+        text-wrap: nowrap;
+        width: fit-content;
+        @include resl("border-width", 1px);
+        @include resl("gap", 10px);
+        @include resl("height", 40px);
+        @include resl("padding-left", 16px);
+        @include resl("padding-right", 16px);
+        @include resl("font-size", 13px);
+        @include resl("line-height", 13px);
+        @include resl("border-radius", 46px);
+      }
+      @include media(576) {
+        text-wrap: nowrap;
+        width: fit-content;
+        @include resa("border-width", 1px);
+        @include resa("gap", 10px);
+        @include resa("height", 34px);
+        @include resa("padding-left", 16px);
+        @include resa("padding-right", 16px);
+        @include resa("font-size", 14px);
+        @include resa("line-height", 17.85px);
+        @include resa("border-radius", 46px);
+        text-transform: none;
+      }
+    }
+  }
+}
