@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from "react";
-import styles from "./Header.module.scss";
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
+import { useState, useEffect, useRef } from "react"
+import styles from "./Header.module.scss"
+import { useRouter } from "next/router"
+import { useTranslation } from "next-i18next"
 
 const Header = ({
   mainRef,
@@ -10,64 +10,70 @@ const Header = ({
   contactsRef,
   plusRef,
   currentBlock,
+  isProfile = false,
+  defLang = 'uz',
   setCurrentBlock,
 }) => {
-  const { t } = useTranslation("common");
-  const router = useRouter();
-  const [showLang, setShowLang] = useState(false);
-  const dropdownRef = useRef(null);
-  const [burger, setBurger] = useState(false);
-  const [currentLang, setCurrentLang] = useState("ru");
+  const { t } = useTranslation("common")
+  const router = useRouter()
+  const [showLang, setShowLang] = useState(false)
+  const dropdownRef = useRef(null)
+  const [burger, setBurger] = useState(false)
+  const [currentLang, setCurrentLang] = useState('')
 
   const toggleBurger = () => {
-    setBurger(!burger);
-  };
+    setBurger(!burger)
+  }
 
   const changeBlock = (block) => {
     if (block === "main" && mainRef.current) {
-      mainRef.current.scrollIntoView({ behavior: "smooth" });
+      mainRef.current.scrollIntoView({ behavior: "smooth" })
     } else if (block === "company" && companyRef.current) {
-      companyRef.current.scrollIntoView({ behavior: "smooth" });
+      companyRef.current.scrollIntoView({ behavior: "smooth" })
     } else if (block === "products" && productsRef.current) {
-      productsRef.current.scrollIntoView({ behavior: "smooth" });
+      productsRef.current.scrollIntoView({ behavior: "smooth" })
     } else if (block === "contacts" && contactsRef.current) {
-      contactsRef.current.scrollIntoView({ behavior: "smooth" });
+      contactsRef.current.scrollIntoView({ behavior: "smooth" })
     } else if (block === "plus" && plusRef.current) {
-      plusRef.current.scrollIntoView({ behavior: "smooth" });
+      plusRef.current.scrollIntoView({ behavior: "smooth" })
     }
 
     if (burger === true) {
-      toggleBurger();
+      toggleBurger()
     }
-  };
+  }
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setShowLang(false);
+        setShowLang(false)
       }
-    };
+    }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside)
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [dropdownRef]);
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [dropdownRef])
+
+  useEffect(() => {
+    setCurrentLang(defLang)
+  }, [defLang])
 
   const toggleDropdown = () => {
-    setShowLang(!showLang);
-  };
+    setShowLang(!showLang)
+  }
 
   const changeLang = (lang) => {
-    setCurrentLang(lang);
-    router.push(router.pathname, router.asPath, { locale: lang });
-  };
+    setCurrentLang(lang)
+    router.push(router.pathname, router.asPath, { locale: lang })
+  }
 
   return (
-    <header className={styles.header}>
-      <div className={styles.headerMob}>
-        <div onClick={toggleBurger} className={styles.headerMobBtn}>
+    <header className={ styles.header }>
+      <div className={ styles.headerMob }>
+        <div onClick={ toggleBurger } className={ styles.headerMobBtn }>
           <svg
             width="32"
             height="20"
@@ -75,32 +81,36 @@ const Header = ({
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <rect width="32" height="4" rx="2" fill="#152040" />
-            <rect y="8" width="32" height="4" rx="2" fill="#152040" />
-            <rect y="16" width="32" height="4" rx="2" fill="#152040" />
+            <rect width="32" height="4" rx="2" fill="#152040"/>
+            <rect y="8" width="32" height="4" rx="2" fill="#152040"/>
+            <rect y="16" width="32" height="4" rx="2" fill="#152040"/>
           </svg>
         </div>
-        <div className={styles.headerMobLogo}>
+        <div
+          className={ styles.headerMobLogo }
+          onClick={ () => router.push("/") }
+          style={ { cursor: 'pointer' } }
+        >
           <img
             loading="lazy"
-            src="images/logo-green.svg"
+            src="/images/logo-green.svg"
             alt=""
             draggable="false"
-            className={styles.logo}
+            className={ styles.logo }
           />
         </div>
       </div>
       <div
-        onClick={toggleBurger}
-        className={`${styles.filter} ${burger === true ? styles.active : ""}`}
+        onClick={ toggleBurger }
+        className={ `${ styles.filter } ${ burger === true ? styles.active : "" }` }
       ></div>
       <div
-        className={`${styles.container} ${
+        className={ `${ styles.container } ${
           burger === true ? styles.active : ""
-        }`}
+        }` }
       >
-        <div onClick={toggleBurger} className={styles.exit}>
-          <button className={styles.exitBtn}>
+        <div onClick={ toggleBurger } className={ styles.exit }>
+          <button className={ styles.exitBtn }>
             <svg
               width="32"
               height="32"
@@ -115,55 +125,55 @@ const Header = ({
             </svg>
           </button>
         </div>
-        <div className={styles.left}>
+        <div className={ styles.left }>
           <button
-            onClick={() => {
-              router.push("/");
-            }}
+            onClick={ () => {
+              router.push("/")
+            } }
           >
             <img
               loading="lazy"
-              src="images/logo-green.svg"
+              src="/images/logo-green.svg"
               alt=""
               draggable="false"
-              className={styles.logo}
+              className={ styles.logo }
             />
           </button>
-          <nav className={styles.nav}>
+          { !isProfile && <nav className={ styles.nav }>
             <button
-              onClick={() => changeBlock("main")}
-              className={currentBlock === "main" ? styles.active : ""}
+              onClick={ () => changeBlock("main") }
+              className={ currentBlock === "main" ? styles.active : "" }
             >
-              {t("menu_home")}
+              { t("menu_home") }
             </button>
             <button
-              onClick={() => changeBlock("company")}
-              className={currentBlock === "company" ? styles.active : ""}
+              onClick={ () => changeBlock("company") }
+              className={ currentBlock === "company" ? styles.active : "" }
             >
-              {t("about_company")}
+              { t("about_company") }
             </button>
             <button
-              onClick={() => changeBlock("products")}
-              className={currentBlock === "products" ? styles.active : ""}
+              onClick={ () => changeBlock("products") }
+              className={ currentBlock === "products" ? styles.active : "" }
             >
-              {t("products")}
+              { t("products") }
             </button>
             <button
-              onClick={() => changeBlock("contacts")}
-              className={currentBlock === "contacts" ? styles.active : ""}
+              onClick={ () => changeBlock("contacts") }
+              className={ currentBlock === "contacts" ? styles.active : "" }
             >
-              {t("contacts")}
+              { t("contacts") }
             </button>
-          </nav>
+          </nav> }
         </div>
-        <div className={styles.right}>
-          <div className={styles.dropDown} ref={dropdownRef}>
+        <div className={ styles.right }>
+          <div className={ styles.dropDown } ref={ dropdownRef }>
             <button
               type="button"
-              className={styles.dropDownTitle}
-              onClick={toggleDropdown}
+              className={ styles.dropDownTitle }
+              onClick={ toggleDropdown }
             >
-              {currentLang.toUpperCase()}
+              { currentLang.toUpperCase() }
               <svg
                 width="16"
                 height="16"
@@ -178,36 +188,36 @@ const Header = ({
               </svg>
             </button>
             <div
-              className={`${styles.dropDownInner} ${
+              className={ `${ styles.dropDownInner } ${
                 showLang ? styles.show : ""
-              }`}
+              }` }
             >
               <button
-                onClick={() => changeLang("ru")}
+                onClick={ () => changeLang("ru") }
                 type="button"
-                className={`${styles.dropDownBtn} ${
+                className={ `${ styles.dropDownBtn } ${
                   currentLang === "ru" ? styles.active : ""
-                }`}
+                }` }
               >
                 RU
               </button>
 
               <button
-                onClick={() => changeLang("uz")}
+                onClick={ () => changeLang("uz") }
                 type="button"
-                className={`${styles.dropDownBtn} ${
+                className={ `${ styles.dropDownBtn } ${
                   currentLang === "uz" ? styles.active : ""
-                }`}
+                }` }
               >
                 UZ
               </button>
 
               <button
-                onClick={() => changeLang("en")}
+                onClick={ () => changeLang("en") }
                 type="button"
-                className={`${styles.dropDownBtn} ${
+                className={ `${ styles.dropDownBtn } ${
                   currentLang === "en" ? styles.active : ""
-                }`}
+                }` }
               >
                 EN
               </button>
@@ -216,7 +226,7 @@ const Header = ({
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

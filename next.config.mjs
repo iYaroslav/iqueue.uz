@@ -6,7 +6,7 @@ const nextConfig = {
     defaultLocale: 'ru',
     localeDetection: false,
   },
-  webpack: (config, { isServer }) => {
+  webpack: (config, {isServer}) => {
     if (!isServer) {
       config.resolve.fallback = {
         fs: false,

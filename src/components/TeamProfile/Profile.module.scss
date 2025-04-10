@@ -1,0 +1,83 @@
+@import "../../styles/mixins.scss";
+
+.profile {
+  background-color: #f4f4f4;
+
+  @include res("margin-top", 120px);
+  @include res("padding-top", 184px);
+  @include res("padding", 50px);
+  @include res("border-radius", 24px);
+  max-width: 35rem;
+
+  @include media(768) {
+    @include resl("padding-top", 40px);
+    @include resa("margin-top", 54px);
+    max-width: 30rem;
+  }
+
+  @include media(576) {
+    @include resa("padding-top", 35px);
+    @include resa("margin-top", 104px);
+  }
+
+  .image {
+    overflow: hidden;
+    width: 100%;
+    max-width: 8rem;
+    margin: 0 auto 2rem;
+    border-radius: 100%;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .name {
+    text-align: center;
+    font-size: 1rem;
+    @include res("margin-top", 30px);
+
+    @include media(768) {
+      @include resl("margin-bottom", 32px);
+      @include resl("font-size", 13px);
+      @include resl("line-height", 19.24px);
+    }
+
+    @include media(576) {
+      @include res("font-size", 35px);
+      @include res("margin-top", 90px);
+      @include resl("margin-bottom", 0px);
+    }
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    @include res("gap", 16px);
+    @include res("margin-top", 25px);
+
+    @include media(768) {
+      @include resl("gap", 16px);
+      @include resl("margin-top", 28px);
+    }
+
+    @include media(576) {
+      @include resa("margin-top", 14px);
+      @include resa("gap", 16px);
+    }
+  }
+
+  a {
+    svg {
+      width: 95%;
+      height: 95%;
+    }
+  }
+}
