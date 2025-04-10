@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }) {
   const [defLang, setDefLang] = useState('')
 
   useEffect(() => {
+    const storageLocale = localStorage.getItem('defLocale')
     const existLocales = ['en', 'ru', 'uz']
     let hasLocale
 
@@ -17,6 +18,8 @@ function MyApp({ Component, pageProps }) {
     hasLocale = existLocales.includes(locale)
 
     locale = hasLocale ? locale : 'uz'
+
+    if (storageLocale) locale = storageLocale
 
     setDefLang(locale)
 

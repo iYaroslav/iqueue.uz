@@ -9,6 +9,11 @@ const profiles = {
       uz: 'Samardak Yaroslav',
       en: 'Yaroslav Samardak',
     },
+    position: {
+      ru: 'Технический директор',
+      uz: 'Texnik direktor',
+      en: 'Tech lead',
+    },
     img: '/images/teams/yaroslav.jpg',
     contacts: [{
       value: 'mailto:iYaroslav@mobisol.uz',
@@ -35,7 +40,7 @@ const profiles = {
 function TeamProfile(props) {
   const { path } = props
   const router = useRouter()
-  const currentLang =  router.locale
+  const currentLang = router.locale
 
   const svgRender = useCallback((value, type) => {
     switch (type) {
@@ -117,6 +122,10 @@ function TeamProfile(props) {
 
         <div className={ styles.name }>
           <h1>{ profile.fullName[currentLang] }</h1>
+        </div>
+
+        <div className={ styles.position }>
+          <h1>{ profile.position[currentLang] }</h1>
         </div>
 
         <div className={ styles.footer }>

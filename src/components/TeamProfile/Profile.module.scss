@@ -37,7 +37,7 @@
     }
   }
 
-  .name {
+  .name, .position {
     text-align: center;
     font-size: 1rem;
     @include res("margin-top", 30px);
@@ -55,13 +55,31 @@
     }
   }
 
+  .position {
+    font-size: 0.7rem;
+    @include res("margin-top", 10px);
+    @include res("margin-bottom", 0px);
+
+    @include media(768) {
+      @include resl("margin-bottom", 32px);
+      @include resl("font-size", 10px);
+      @include resl("line-height", 19.24px);
+    }
+
+    @include media(576) {
+      @include res("font-size", 25px);
+      @include res("margin-top", 90px);
+      @include resl("margin-bottom", 0px);
+    }
+  }
+
   .footer {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 
     @include res("gap", 16px);
-    @include res("margin-top", 25px);
+    @include res("margin-top", 20px);
 
     @include media(768) {
       @include resl("gap", 16px);
