@@ -15,8 +15,18 @@ function Profile({ defLang }) {
 }
 
 export const getStaticPaths = async () => {
+  const profiles = ['yaroslav']
+  const locales = ['ru', 'en', 'uz']
+  const paths = []
+
+  for (const locale of locales) {
+    for (const profile of profiles) {
+      paths.push({ params: { profile }, locale })
+    }
+  }
+
   return {
-    paths: [],
+    paths,
     fallback: false,
   }
 }
