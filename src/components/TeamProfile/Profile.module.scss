@@ -57,7 +57,7 @@
 
   .position {
     font-size: 0.7rem;
-    @include res("margin-top", 10px);
+    @include res("margin-top", 20px);
     @include res("margin-bottom", 0px);
 
     @include media(768) {
