@@ -5,21 +5,22 @@ import styles from './Profile.module.scss'
 const profiles = {
   yaroslav: [{
     fullName: {
-      ru: 'Самардак Ярослав',
-      uz: 'Samardak Yaroslav',
-      en: 'Yaroslav Samardak',
+      ru: 'Самордак Ярослав',
+      uz: 'Samоrdak Yaroslav',
+      en: 'Yaroslav Samоrdak',
     },
     position: {
       ru: 'Технический директор',
-      uz: 'Texnik direktor',
-      en: 'Tech lead',
+      uz: 'Bosh texnologiya direktori',
+      en: 'CTO',
     },
     img: '/images/teams/yaroslav.jpg',
     contacts: [{
-      value: 'mailto:iYaroslav@mobisol.uz',
-      type: 'wechat',
-    }, {
-      value: 't.me/iYaroslav',
+      // value: 'weixin://dl/chat?SamYaroslav', // weixin://dl/chat?wxid_700vfqjo8fwv22 Mans
+      // value: 'weixin://dl/chat?wxid_700vfqjo8fwv22', // weixin://dl/chat?wxid_700vfqjo8fwv22 Mans
+      // type: 'wechat',
+    // }, {
+      value: 'https://t.me/iYaroslav',
       type: 'telegram',
     }, {
       value: 'tel:+998977102067',
@@ -28,11 +29,111 @@ const profiles = {
       value: 'mailto:iYaroslav@mobisol.uz',
       type: 'email',
     }, {
-      value: 'mailto:iYaroslav@mobisol.uz',
+      value: 'https://wa.me/998977102067',
       type: 'whatsapp',
+    // }, {
+    //   value: 'mailto:iYaroslav@mobisol.uz',
+    //   type: 'viber',
+    }],
+  }],
+  jasur: [{
+    fullName: {
+      ru: 'Насыров Жасур',
+      uz: 'Nasirov Jasur',
+      en: 'Nasirov Jasur',
+    },
+    position: {
+      ru: 'Генеральный Директор',
+      uz: 'Boshqaruvchi direktor',
+      en: 'CEO',
+    },
+    img: '/images/teams/jasur.jpg',
+    contacts: [{
+      value: 'https://t.me/JasurNG',
+      type: 'telegram',
     }, {
-      value: 'mailto:iYaroslav@mobisol.uz',
-      type: 'viber',
+      value: 'tel:+998903289788',
+      type: 'phone',
+    }, {
+      value: 'mailto:j.nasirov@iqueue.uz',
+      type: 'email',
+    }, {
+      value: 'https://wa.me/998903289788',
+      type: 'whatsapp',
+    }],
+  }],
+  timur: [{
+    fullName: {
+      ru: 'Насыров Жасур',
+      uz: 'Nasirov Jasur',
+      en: 'Nasirov Jasur',
+    },
+    position: {
+      ru: 'Генеральный Директор',
+      uz: 'Bosh direktor',
+      en: 'CEO',
+    },
+    img: '/images/teams/jasur.jpg',
+    contacts: [{
+      value: 'https://t.me/JasurNG',
+      type: 'telegram',
+    }, {
+      value: 'tel:+998903289788',
+      type: 'phone',
+    }, {
+      value: 'mailto:j.nasirov@iqueue.uz',
+      type: 'email',
+    }, {
+      value: 'https://wa.me/998903289788',
+      type: 'whatsapp',
+    }],
+  }],
+  mansur: [{
+    fullName: {
+      ru: 'Насыров Мансур',
+      uz: 'Nasirov Mansur',
+      en: 'Nasirov Mansur',
+    },
+    position: {},
+    img: '/images/teams/mansur.jpg',
+    contacts: [{
+      value: 'https://t.me/mansurng',
+      type: 'telegram',
+    }, {
+      value: 'tel:+998901871743',
+      type: 'phone',
+    }, {
+      value: 'mailto:nasirov@atlantis.uz',
+      type: 'email',
+    }, {
+      value: 'https://wa.me/998901871743',
+      type: 'whatsapp',
+    }],
+  }],
+  rizaev: [{
+    fullName: {
+      ru: 'Насыров Жасур',
+      uz: 'Nasirov Jasur',
+      en: 'Nasirov Jasur',
+    },
+    position: {
+      ru: 'Генеральный Директор',
+      uz: 'Boshqaruvchi direktor',
+      en: 'CEO',
+    },
+    img: '/images/teams/jasur.jpg',
+    contacts: [{
+      value: 'https://t.me/JasurNG',
+      type: 'telegram',
+    }, {
+      value: 'tel:+998903289788',
+      type: 'phone',
+    }, {
+      value: 'mailto:j.nasirov@iqueue.uz',
+      type: 'email',
+    }, {
+      value: 'https://wa.me/998903289788',
+      type: 'whatsapp',
     }],
   }],
 }

@@ -15,7 +15,7 @@ function Profile({ defLang }) {
 }
 
 export const getStaticPaths = async () => {
-  const profiles = ['yaroslav']
+  const profiles = ['mansur', 'timur', 'jasur', 'rizaev', 'yaroslav']
   const locales = ['ru', 'en', 'uz']
   const paths = []
 
